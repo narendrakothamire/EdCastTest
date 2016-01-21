@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -90,6 +91,7 @@ public class FragmentPosts extends Fragment {
         View view = inflater.inflate(R.layout.fragment_posts, null, false);
 
         postsRecyclerView = (RecyclerView)view.findViewById(R.id.posts_recycler_view);
+        postsRecyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         adapterPosts = new AdapterPosts(context, posts);
         postsRecyclerView.setAdapter(adapterPosts);
