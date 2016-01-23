@@ -15,6 +15,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.narendra.edcasttest.Adapters.AdapterComments;
+import com.example.narendra.edcasttest.Constants;
 import com.example.narendra.edcasttest.Models.Comment;
 import com.example.narendra.edcasttest.Network.VolleyRequest;
 import com.example.narendra.edcasttest.R;
@@ -86,7 +87,8 @@ public class ActivityComments extends AppCompatActivity {
         commentsListView.setAdapter(adapterComments);
 
         toggleIndicator(View.VISIBLE);
-        String URL = BASE_URL + 1 + "/comments";
+        postId = getIntent().getIntExtra(Constants.ARG_POST_ID, -1);
+        String URL = BASE_URL + postId + "/comments";
         VolleyRequest volleyRequest = new VolleyRequest(Request.Method.GET, "get_comments", URL, null, successListener, errorListener);
         EdCatTextApplication.getInstance().addToRequestQueue(volleyRequest);
     }

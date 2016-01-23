@@ -129,6 +129,12 @@ public class FragmentPhotos extends Fragment {
         return view;
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        EdCatTextApplication.getInstance().cancelPendingRequests("get_photos");
+    }
+
     private void toggleIndicator(int visible) {
         indicatorLayout.setVisibility(visible);
     }
