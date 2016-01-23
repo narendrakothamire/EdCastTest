@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <ListView
-        android:id="@+id/posts_list_view"
+        android:id="@+id/comments_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:dividerHeight="2dp">
